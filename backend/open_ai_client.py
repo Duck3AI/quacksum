@@ -12,8 +12,8 @@ class OpenAIClient:
                  temperature=0.6):
         """Get a response from the GPT-3 Completion API."""
         response_token_count = int(
-            util.get_max_token_count(model) -
-            len(prompt.split()) * util.TOKENS_PER_WORD_RATE_GPT3)
+            (util.get_max_token_count(model) -
+             len(prompt.split()) * util.TOKENS_PER_WORD_RATE_GPT3) * 0.8)
         if (response_token_count <= 0):
             raise ValueError("Prompt is too long for the model.")
         response = openai.Completion.create(model=model.value,
