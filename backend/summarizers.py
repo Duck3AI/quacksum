@@ -71,11 +71,14 @@ _CONTINUATION_PROMPT_TEMPLATE_LENGTH = len(
     _CONTINUATION_PROMPT_TEMPLATE.split())
 
 _FINAL_PROMPT_TEMPLATE = """\
-Given the following talking points, write me a short article{article_title} summarizing the main points, \
-ideas and tones. Make it between 200 and {summary_length_words} words. Do not repeat the same points multiple times. \
+Write me a short article{article_title} incorporating the following points: \
 
-Talking points:
 {talking_points}
+
+
+
+Preserve the main points, ideas and tones. Make it between 100 and {summary_length_words} words. \
+Do not include a conclusion paragraph.
 """
 
 
