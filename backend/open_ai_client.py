@@ -9,7 +9,7 @@ class OpenAIClient:
     def complete(self,
                  prompt: str,
                  model=util.OpenAIModelType.TEXT_DAVINCI_3_MODEL,
-                 temperature=0.6):
+                 temperature=0.3):
         """Get a response from the GPT-3 Completion API."""
         response_token_count = int(
             (util.get_max_token_count(model) -
